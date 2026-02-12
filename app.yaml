@@ -1,0 +1,7 @@
+kind: wasmer.io/App.v0
+name: mmy-php-framework
+owner: bel4ophp
+package: .
+
+scaling:
+  mode: single_concurrency # Best for the Free Plan (conserves CPU hours)

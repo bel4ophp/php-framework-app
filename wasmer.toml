@@ -1,0 +1,21 @@
+[package]
+name = "bel4ophp/my-php-framework" # Replace with your wasmer username
+version = "0.1.0"
+description = "PHP Micro-framework API"
+
+[dependencies]
+"php/php" = "8.3.4" # Or the latest stable version
+
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+# This points to your framework's entry folder
+# -t /app: Sets the document root
+# -S localhost:8080: Starts the internal PHP server
+main-args = ["-t", "/app", "-S", "localhost:8080"]
+
+[fs]
+"/app" = "." # Maps your entire GitHub repo to the /app directory in Wasm
